@@ -16,15 +16,17 @@
   <h4 id='fl'></h4>
   <div id="info"></div>
   <script>
-    var link = window.location.href.slice(0,-1);
-    axios.get(link+':5000/led')
-    .then(function(d) {
-      var R = d.data[0] ? 'ff':'00';
-      var G = d.data[1] ? 'ff':'00';
-      var B = d.data[2] ? 'ff':'00';
+    setInterval(function(){
+      var link = window.location.href.slice(0,-1);
+      axios.get(link+':5000/led')
+      .then(function(d) {
+        var R = d.data[0] ? 'ff':'00';
+        var G = d.data[1] ? 'ff':'00';
+        var B = d.data[2] ? 'ff':'00';
 
-      document.getElementById('color').style.background = '#'+R+G+B;
-    })
+        document.getElementById('color').style.background = '#'+R+G+B;
+      })
+    } , 2000)
   </script>
 </div>
 <svg width="800" height="600"></svg>
