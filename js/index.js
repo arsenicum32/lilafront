@@ -58,7 +58,11 @@ d3.json("https://untitled-ys0e32c146y1.runkit.sh/", function (error, graph) {
   var node = svg.append("g").attr("class", "nodes").selectAll("circle").data(graph.nodes).enter().append("circle").attr("fl", function (d) {
     return d.name == "INPUT" ? IN.pop() : d.name == "OUTPUT" ? OUT.pop() : null;
   }).attr("r", function (d) {
-    return d.name != "INPUT" && d.name != "OUTPUT" ? Math.abs(d.bias) * 180 : 10;
+    Math.min(Math.abs(d.bias)*180, 40) == 40?
+         d3.select(this).style('opacity',.6)
+        :null;
+        return d.name != "INPUT" && d.name !=  "OUTPUT" ?
+        Math.min(Math.abs(d.bias)*180, 40):10;
   }).attr("fill", function (d) {
     return d.name == 'INPUT' ? 'white' : d.name != 'OUTPUT' ? d3.select(this).classed('filled', true) : 'black';
   }).attr('stroke', 'black').on('mouseover', function (d) {
