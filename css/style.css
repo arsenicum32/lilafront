@@ -1,0 +1,56 @@
+body{
+  font-family: DIN Pro;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+
+svg {
+  margin: auto;
+}
+.links line {
+	stroke: black;
+	stroke-opacity: 1;
+}
+
+.nodes circle {
+	/*stroke: #fff;*/
+	stroke-width: 1.5px;
+}
+
+.top {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+}
+
+p{
+  line-height: .5em;
+}
+
+.stop-left {
+                stop-color: #87c6c6;  /* Indigo */
+            }
+
+            .stop-right {
+                stop-color: #efbb8e;  /* Teal */
+            }
+
+            .filled {
+                fill: url(#mainGradient);
+            }
+
+            .outlined {
+                fill:   none;
+                stroke: url(#mainGradient);
+                stroke-width: 4;
+            }
+
+.col{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: red;
+  display: inline-block;
+  filter: blur(5px);
+}
