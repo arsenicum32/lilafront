@@ -11,7 +11,7 @@
   <div class="top">
   <h1>Lila <div class="col" id="color"></div></h1>
   <small><b>online</b></small><br/>
-  <small>H2:C3:F4:G5:D7:K0</small>
+  <small id='seeb'>H2:C3:F4:G5:D7:K0</small>
   <h4>K = 0.0067</h4>
   <h4 id='fl'></h4>
   <div id="info"></div>
@@ -24,7 +24,14 @@
         var G = d.data[1] ? 'ff':'00';
         var B = d.data[2] ? 'ff':'00';
 
-        document.getElementById('color').style.background = '#'+R+G+B;
+        document.getElementById('color').style.background =
+        !d.data[0]&&!d.data[1]&&!d.data[2] ? 'rgba(0,0,0,0)' :'#'+R+G+B;
+      })
+
+      axios.get(link+':3500/hciconfig').then(function(d){
+        d.data.data ?
+        document.getElementById('seeb').innerHTML = d.data.data
+        : null;
       })
     } , 2000)
   </script>
