@@ -29,8 +29,9 @@
       })
 
       axios.get(link+':3500/hciconfig').then(function(d){
-        d.data.data ?
-        document.getElementById('seeb').innerHTML = d.data.data
+        var dt = d.data.data;
+        dt ?
+        document.getElementById('seeb').innerHTML = dt.split('hci0:	Type: Primary Bus: ')[0].split('ACL')[0]
         : null;
       })
     } , 2000)
