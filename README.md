@@ -4,12 +4,15 @@
 
 install:
 
+```
 nginx
 npm
 nodejs
+```
 
-install package
+install npm package
 
+```
 pm2 -g
 express
 cors
@@ -18,7 +21,7 @@ node-cmd
 chance
 moment
 neataptic
-
+```
 
 
 2.
@@ -40,8 +43,12 @@ pm2 start -n light light.js
 ```
 
 4.
-скачать сервак ml и развернуть его ( generate ML ) -p 4800
+upload ml server and run it ( generate ML ) -p 4800
 ml.js
+```
+curl https://gist.githubusercontent.com/arsenicum32/139a11295993e9e1146a05e6656ddee7/raw/102c8ecebfd6850782b65c3d1d0b8b5aaa57159d/lila%2520ML%2520algoritm > ml.js
+pm2 start -n ml ml.js
+```
 
 
 5.
